@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "608421275989",
+    "firebase_url": "https://badteacherjokes.firebaseio.com",
+    "project_id": "badteacherjokes",
+    "storage_bucket": "badteacherjokes.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608421275989:android:c6fcc3ed02c1c631",
+        "android_client_info": {
+          "package_name": "groep.ch.badteacherjokes"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "608421275989-p7o96e0q3hhublt4botdhds762057pli.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "groep.ch.badteacherjokes",
+            "certificate_hash": "52ff1f32ec71cd49fcc7f3709468e194407bde9e"
+          }
+        },
+        {
+          "client_id": "608421275989-oiii47cfplhn1ppfh1a7og89ccbslq08.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDURxAUCOwj_YSk5tPxG5RjMP20IeMf4Ys"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "608421275989-oiii47cfplhn1ppfh1a7og89ccbslq08.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
