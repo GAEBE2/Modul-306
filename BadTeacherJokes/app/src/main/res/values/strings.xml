@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">BadTeacherJokes</string>
+    <string name="login">Log In</string>
+    <string name="register">Register</string>
+
+
+    <!-- Register -->
+
+    <string name="user_name">User Name</string>
+    <string name="email">E-Mail</string>
+    <string name="password">Password</string>
+    <string name="repeat">Repeat Password</string>
+    <string name="profile_picture">Profile Picture</string>
+
 </resources>
