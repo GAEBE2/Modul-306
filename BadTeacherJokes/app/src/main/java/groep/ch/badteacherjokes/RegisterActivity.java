@@ -26,10 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currUser = mAuth.getCurrentUser();
-        if (currUser != null){
-            updateUI();
-        }
+
         Button submit = (Button) findViewById(R.id.submit);
 
         submit.setOnClickListener(new View.OnClickListener() {
@@ -45,9 +42,17 @@ public class RegisterActivity extends AppCompatActivity {
         });
     }
 
+    protected void onResume(@Nullable Bundle savedInstanceState){
+        FirebaseUser currUser = mAuth.getCurrentUser();
+        if (currUser != null){
+            updateUI();
+        }
+    }
+
     private void updateUI(){
         Intent intent = new Intent(RegisterActivity.this, MainActivity.class);
         RegisterActivity.this.startActivity(intent);
+        finish();
     }
 
     private void insertUser(){
@@ -65,7 +70,6 @@ public class RegisterActivity extends AppCompatActivity {
                             // If sign in fails, display a message to the user.
                             Toast.makeText(getApplicationContext(), "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
-                            updateUI();
                         }
                     }
                 });
