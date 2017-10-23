@@ -1,5 +1,6 @@
 package groep.ch.entertainnet;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
@@ -19,9 +20,16 @@ public class UserActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser user = mAuth.getCurrentUser();
-
-        tv_mail = (TextView) findViewById(R.id.tv_mail);
-
-        tv_mail.setText(user.getEmail().toString());
+        if (user != null) {
+            tv_mail = (TextView) findViewById(R.id.tv_mail);
+            tv_mail.setText(user.getEmail().toString());
+        } else {
+            try {
+                Intent k = new Intent(UserActivity.this, StartActivity.class);
+                startActivity(k);
+                finish();
+            } catch(Exception e) {
+            }
+        }
     }
 }
