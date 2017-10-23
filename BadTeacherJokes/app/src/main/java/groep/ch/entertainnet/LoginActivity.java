@@ -1,4 +1,4 @@
-package groep.ch.badteacherjokes;
+package groep.ch.entertainnet;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

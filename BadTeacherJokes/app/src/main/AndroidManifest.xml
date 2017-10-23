@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="groep.ch.badteacherjokes">
+    package="groep.ch.entertainnet">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainActivity" />
-        <activity android:name=".StartActivity">
+        <activity android:name=".CreateChatActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -20,7 +20,7 @@
         <activity
             android:name=".RegisterActivity"
             android:label="@string/app_name" />
-        <activity android:name=".UserActivity"></activity>
+        <activity android:name=".UserActivity"/>
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-package groep.ch.badteacherjokes;
+package groep.ch.entertainnet;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 
 import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.FirebaseUser;
 
 /**
  * Created by Gabi on 18.09.2017.
