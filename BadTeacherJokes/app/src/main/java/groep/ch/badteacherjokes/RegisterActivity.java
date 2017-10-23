@@ -28,7 +28,6 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         FirebaseUser currUser = mAuth.getCurrentUser();
         if (currUser == null){
-            //TODO: Leck Eier Päde, FYI pls ignore this message if you are a teacher, else: insert code to redirect to mainscreen
             updateUI();
         }
         Button submit = (Button) findViewById(R.id.submit);
