@@ -23,9 +23,8 @@
         <activity
             android:name=".LoginActivity"
             android:label="BadTeacherJokes" />
-        <activity android:name=".UserActivity"></activity>
         <activity android:name=".UserActivity" />
-        <activity android:name=".NewPostActivity"></activity>
+        <activity android:name=".CreatePostActivity"/>
     </application>
 
 </manifest>

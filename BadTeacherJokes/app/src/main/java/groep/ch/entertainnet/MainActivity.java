@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     try {
-                        Intent k = new Intent(MainActivity.this, NewPostActivity.class);
+                        Intent k = new Intent(MainActivity.this, CreatePostActivity.class);
                         startActivity(k);
                     } catch(Exception e) {
                     }
