@@ -24,6 +24,8 @@
             android:name=".LoginActivity"
             android:label="BadTeacherJokes" />
         <activity android:name=".UserActivity"></activity>
+        <activity android:name=".UserActivity" />
+        <activity android:name=".NewPostActivity"></activity>
     </application>
 
 </manifest>
