@@ -26,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
         mAuth = FirebaseAuth.getInstance();
 
-        ((Button) findViewById(R.id.submit)).setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.submit).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 signIn();
@@ -38,9 +38,9 @@ public class LoginActivity extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
         FirebaseUser currentUser = mAuth.getCurrentUser();
-        if (currentUser != null) {
+        /*if (currentUser != null) {
             updateUI();
-        }
+        }*/
     }
 
     private void updateUI(){
