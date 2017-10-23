@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+xxxhdpi ~640dpi
+-->
+<resources>
+    <dimen name="view_space">16dp</dimen>
+</resources>
