@@ -42,6 +42,13 @@
             {
               "client_id": "608421275989-oiii47cfplhn1ppfh1a7og89ccbslq08.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "608421275989-4806p9t8kdbmj7dr6fnrsv66ttm6r7it.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "groep.ch.badteacherjokes"
+              }
             }
           ]
         },

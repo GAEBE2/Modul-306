@@ -54,7 +54,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/password_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/password"
