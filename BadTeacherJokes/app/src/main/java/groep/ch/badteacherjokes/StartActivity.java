@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseUser;
@@ -14,6 +15,8 @@ import com.google.firebase.auth.FirebaseUser;
  */
 
 public class StartActivity extends AppCompatActivity {
+
+    public Button btn_gth;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +28,16 @@ public class StartActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(StartActivity.this, RegisterActivity.class);
                 StartActivity.this.startActivity(intent);
+            }
+        });
+
+        btn_gth = (Button) findViewById(R.id.gth);
+        btn_gth.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                StartActivity.this.startActivity(intent);
+                finish();
             }
         });
     }
