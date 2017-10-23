@@ -13,5 +13,6 @@
     <string name="profile_picture">Profile Picture</string>
     <string name="title">Title</string>
     <string name="content">Content</string>
+    <string name="tag">Tag</string>
 
 </resources>
