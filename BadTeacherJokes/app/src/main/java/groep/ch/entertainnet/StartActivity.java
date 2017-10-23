@@ -30,13 +30,12 @@ public class StartActivity extends AppCompatActivity {
             }
         });
 
-        btn_gth = (Button) findViewById(R.id.gth);
-        btn_gth.setOnClickListener(new View.OnClickListener() {
+        findViewById(R.id.login).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(StartActivity.this, MainActivity.class);
+                Intent intent = new Intent(StartActivity.this, LoginActivity.class);
                 StartActivity.this.startActivity(intent);
-                finish();
+
             }
         });
     }
