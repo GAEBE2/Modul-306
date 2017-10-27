@@ -82,6 +82,7 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     Intent k = new Intent(MainActivity.this, UserActivity.class);
                     startActivity(k);
+                    finish();
                 } catch(Exception e) {
                 }
                 return true;

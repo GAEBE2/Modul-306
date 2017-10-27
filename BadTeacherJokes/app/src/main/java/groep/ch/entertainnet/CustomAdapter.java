@@ -8,6 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
@@ -40,7 +41,7 @@ public class CustomAdapter extends ArrayAdapter<Post> {
 
         TextView tv_title = (TextView) rowView.findViewById(R.id.tv_title);
         TextView tv_content = (TextView) rowView.findViewById(R.id.tv_content);
-        RelativeLayout space_tags = (RelativeLayout) rowView.findViewById(R.id.space_tags);
+        LinearLayout space_tags = (LinearLayout) rowView.findViewById(R.id.space_tags);
 
         Drawable d = ContextCompat.getDrawable(context, R.drawable.text_roundcorner);
 
@@ -50,6 +51,10 @@ public class CustomAdapter extends ArrayAdapter<Post> {
             TextView tv_tag = new TextView(getContext());
             tv_tag.setBackground(d);
             tv_tag.setTextColor(ContextCompat.getColor(context, R.color.textColor1));
+            RelativeLayout.LayoutParams llp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
+            llp.setMargins(0, 0, 20, 0); // llp.setMargins(left, top, right, bottom);
+            tv_tag.setLayoutParams(llp);
+            tv_tag.setPadding(5, 0, 5, 0);
             space_tags.addView(tv_tag);
             tv_tag.setText(tag);
         }
