@@ -1,13 +1,14 @@
 package groep.ch.entertainnet;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.support.v4.content.ContextCompat;
-import android.support.v4.content.res.ResourcesCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -43,20 +44,30 @@ public class CustomAdapter extends ArrayAdapter<Post> {
         TextView tv_content = (TextView) rowView.findViewById(R.id.tv_content);
         LinearLayout space_tags = (LinearLayout) rowView.findViewById(R.id.space_tags);
 
-        Drawable d = ContextCompat.getDrawable(context, R.drawable.text_roundcorner);
+        Drawable d = ContextCompat.getDrawable(context, R.drawable.btn_roundcorner);
 
         tv_title.setText(posts[position].getTitle());
         tv_content.setText(posts[position].getContent());
-        for (String tag : posts[position].getTags()){
-            TextView tv_tag = new TextView(getContext());
+        for (final String tag : posts[position].getTags()){
+            final TextView tv_tag = new TextView(getContext());
             tv_tag.setBackground(d);
             tv_tag.setTextColor(ContextCompat.getColor(context, R.color.textColor1));
             RelativeLayout.LayoutParams llp = new RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT, RelativeLayout.LayoutParams.WRAP_CONTENT);
             llp.setMargins(0, 0, 20, 0); // llp.setMargins(left, top, right, bottom);
             tv_tag.setLayoutParams(llp);
-            tv_tag.setPadding(5, 0, 5, 0);
             space_tags.addView(tv_tag);
             tv_tag.setText(tag);
+            tv_tag.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MainActivity.searchTag = tv_tag.getText().toString();
+                    try {
+                        Intent k = new Intent(getContext(), TagActivity.class);
+                        getContext().startActivity(k);
+                    } catch(Exception e) {
+                    }
+                }
+            });
         }
 
         return rowView;

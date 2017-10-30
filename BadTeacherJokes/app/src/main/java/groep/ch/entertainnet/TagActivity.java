@@ -1,14 +1,14 @@
 package groep.ch.entertainnet;
 
 import android.content.Intent;
-import android.support.design.widget.FloatingActionButton;
+import android.nfc.Tag;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.AdapterView;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -21,19 +21,16 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
 import com.google.firebase.database.ValueEventListener;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.Iterator;
 
-public class MainActivity extends AppCompatActivity {
-    public FirebaseAuth mAuth;
-    public FloatingActionButton fab_add;
+public class TagActivity extends AppCompatActivity {
+    private FirebaseAuth mAuth;
+    private FirebaseUser user;
     private CustomAdapter adapter;
-    private ListView lv_post;
+    private ListView lv_tagpost;
     private ArrayList<Post> posts = new ArrayList<>();
-    public static String searchTag = "";
 
     DatabaseReference mRootRef = FirebaseDatabase.getInstance().getReference();
     DatabaseReference mPostRef = mRootRef.child("post");
@@ -41,26 +38,15 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_tag);
 
         mAuth = FirebaseAuth.getInstance();
-        FirebaseUser user = mAuth.getCurrentUser();
+        user = mAuth.getCurrentUser();
         if (user != null) {
-            fab_add = (FloatingActionButton) findViewById(R.id.fab_add);
-            fab_add.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    try {
-                        Intent k = new Intent(MainActivity.this, CreatePostActivity.class);
-                        startActivity(k);
-                    } catch(Exception e) {
-                    }
-                }
-            });
-            lv_post = (ListView) findViewById(R.id.lv_post);
+            lv_tagpost = (ListView) findViewById(R.id.lv_tagpost);
         } else {
             try {
-                Intent k = new Intent(MainActivity.this, StartActivity.class);
+                Intent k = new Intent(TagActivity.this, StartActivity.class);
                 startActivity(k);
                 finish();
             } catch(Exception e) {
@@ -71,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
-        inflater.inflate(R.menu.menu, menu);
+        inflater.inflate(R.menu.back_menu, menu);
         return true;
     }
 
@@ -79,9 +65,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.action_acc:
+            case R.id.action_back:
                 try {
-                    Intent k = new Intent(MainActivity.this, UserActivity.class);
+                    Intent k = new Intent(TagActivity.this, MainActivity.class);
                     startActivity(k);
                     finish();
                 } catch(Exception e) {
@@ -104,7 +90,11 @@ public class MainActivity extends AppCompatActivity {
                     while (postIterator.hasNext()) {
                         String key = (String) postIterator.next();
                         Post value = (Post) postHashMap.get(key);
-                        addPost(value);
+                        for (String tag : value.getTags()){
+                            if (tag.equals(MainActivity.searchTag)){
+                                addPost(value);
+                            }
+                        }
                     }
                     showPost();
                 }else if (postHashMap != null){
@@ -113,7 +103,9 @@ public class MainActivity extends AppCompatActivity {
                     while (postIterator.hasNext()) {
                         String key = (String) postIterator.next();
                         Post value = (Post) postHashMap.get(key);
-                        addPost(value);
+                        if (value.getUserid().equals(user.getUid().toString())){
+                            addPost(value);
+                        }
                     }
                     showPost();
                 }
@@ -138,7 +130,7 @@ public class MainActivity extends AppCompatActivity {
 
             adapter = new
                     CustomAdapter(this, os);
-            lv_post.setAdapter(adapter);
+            lv_tagpost.setAdapter(adapter);
         }
     }
 }
