@@ -29,6 +29,7 @@ android:
         - add-on
         - extra-google-m2repository
         - extra-android-m2repository
+        - sys-img-armeabi-v7a-addon-google_apis-google-25
     
     licenses:
         - 'build-tools-26.0.1'
