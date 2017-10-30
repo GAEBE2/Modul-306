@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="groep.ch.badteacherjokes">
+    package="groep.ch.entertainnet">
 
     <application
         android:allowBackup="true"
@@ -23,9 +23,8 @@
         <activity
             android:name=".LoginActivity"
             android:label="BadTeacherJokes" />
-        <activity android:name=".UserActivity"></activity>
         <activity android:name=".UserActivity" />
-        <activity android:name=".NewPostActivity"></activity>
+        <activity android:name=".CreatePostActivity"/>
     </application>
 
 </manifest>

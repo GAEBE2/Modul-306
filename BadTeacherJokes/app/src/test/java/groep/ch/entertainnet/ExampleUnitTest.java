@@ -1,4 +1,4 @@
-package groep.ch.badteacherjokes;
+package groep.ch.entertainnet;
 
 import org.junit.Test;
 

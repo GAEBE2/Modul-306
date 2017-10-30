@@ -11,7 +11,7 @@
         android:id="@+id/imageView"
         android:layout_width="165dp"
         android:layout_height="152dp"
-        app:srcCompat="?android:attr/actionModeSelectAllDrawable"
+        app:srcCompat="@drawable/logo"
         android:layout_marginBottom="50dp" />
 
 

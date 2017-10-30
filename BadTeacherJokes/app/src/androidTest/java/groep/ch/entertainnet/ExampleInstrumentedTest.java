@@ -1,4 +1,4 @@
-package groep.ch.badteacherjokes;
+package groep.ch.entertainnet;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
