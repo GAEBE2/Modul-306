@@ -35,7 +35,7 @@ public class RegisterActivity extends AppCompatActivity {
                 if (validateForm()) {
                     insertUser();
                 } else {
-                    Toast toast = Toast.makeText(getApplicationContext(),"Passwords doesn't match", Toast.LENGTH_SHORT);
+                    Toast toast = Toast.makeText(getApplicationContext(),"Passwords don't match", Toast.LENGTH_SHORT);
                     toast.show();
                 }
             }
