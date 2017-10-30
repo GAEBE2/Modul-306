@@ -68,7 +68,7 @@ public class CreatePostActivity extends AppCompatActivity {
     }
 
     public void createPost(){
-        if (!titleText.getText().toString().equals("") || !contentText.getText().toString().equals("") || tags.size() != 0){
+        if (!titleText.getText().toString().equals("") && !contentText.getText().toString().equals("") && tags.size() != 0){
             Post post = new Post(titleText.getText().toString(), contentText.getText().toString(), user.getUid().toString(), tags);
             myRef.child(post.getUid().toString()).setValue(post);
             try {
